@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+    "types": []
+  },
+  "include": [
+    "config/**/*.ts",
+    "types/**/*.ts",
+    "lib/utils/money.ts",
+    "lib/utils/phone.ts",
+    "lib/utils/format.ts",
+    "lib/finder/scoring.ts",
+    "lib/products/mappers.ts",
+    "lib/seo/jsonld.ts",
+    "lib/admin/permissions.ts",
+    "tests/typecheck/globals.d.ts"
+  ]
+}
