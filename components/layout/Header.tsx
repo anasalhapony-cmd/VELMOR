@@ -76,7 +76,7 @@ export function Header() {
       </div>
 
       {searchOpen && (
-        <div className="border-t border-ink/10 bg-paper">
+        <div className="border-t border-ink/10 bg-[#fbf9f4]">
           <form onSubmit={submitSearch} className="container-content flex h-14 items-center gap-2">
             <Search size={18} className="text-ink-500" />
             <input
@@ -96,26 +96,33 @@ export function Header() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          <div className="absolute inset-0 bg-ink/40" onClick={() => setMenuOpen(false)} />
-          <div className="absolute inset-y-0 start-0 w-72 max-w-[80%] bg-paper p-6 shadow-xl">
-            <div className="mb-8 flex items-center justify-between">
+          {/* الخلفية المظلمة */}
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMenuOpen(false)} />
+          
+          {/* القائمة الجانبية بخلفية كريمية صلبة */}
+          <div className="fixed inset-y-0 right-0 w-72 max-w-[85%] bg-[#fbf9f4] p-6 shadow-2xl z-50 overflow-y-auto">
+            <div className="mb-8 flex items-center justify-between border-b border-ink/10 pb-4">
               <Logo variant="charcoal" width={110} height={36} href={null} />
-              <button onClick={() => setMenuOpen(false)} aria-label="إغلاق">
+              <button onClick={() => setMenuOpen(false)} aria-label="إغلاق" className="p-1 text-ink">
                 <X size={22} />
               </button>
             </div>
-            <nav className="flex flex-col gap-1">
+            <nav className="flex flex-col gap-2">
               {NAV.map((n) => (
                 <Link
                   key={n.href}
                   href={n.href}
                   onClick={() => setMenuOpen(false)}
-                  className="rounded px-3 py-3 text-base text-ink hover:bg-ink/5"
+                  className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-ink/5"
                 >
                   {n.label}
                 </Link>
               ))}
-              <Link href="/track-order" onClick={() => setMenuOpen(false)} className="rounded px-3 py-3 text-base text-ink hover:bg-ink/5">
+              <Link
+                href="/track-order"
+                onClick={() => setMenuOpen(false)}
+                className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-ink/5 border-t border-ink/10 mt-2 pt-4"
+              >
                 تتبع الطلب
               </Link>
             </nav>
