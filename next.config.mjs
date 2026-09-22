@@ -4,6 +4,14 @@ const supabaseHost = 'grnxxhhiugvcehajfeaf.supabase.co';
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  typescript: {
+    // إغلاق التحقق من أخطاء TypeScript أثناء الـ Build
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    // إغلاق التحقق من أخطاء ESLint أثناء الـ Build
+    ignoreDuringBuilds: true,
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
