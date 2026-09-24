@@ -62,7 +62,22 @@ export async function Footer() {
       <div className="border-t border-paper/10">
         <div className="container-content flex flex-col items-center justify-between gap-2 py-5 text-xs text-paper/50 sm:flex-row">
           <span>© {new Date().getFullYear()} {BRAND.name}. جميع الحقوق محفوظة.</span>
-          <span>الدفع عند الاستلام · توصيل داخل {LOCALE.city}</span>
+          
+          {/* اسم المصمم ورقم الهاتف */}
+          <div className="flex items-center gap-2">
+            <span>صُمم من قبل أنس الحبوني</span>
+            <span>•</span>
+            <a 
+              href="https://wa.me/218934341814" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              dir="ltr" 
+              className="hover:text-paper transition-colors font-mono"
+            >
+              0934341814
+            </a>
+          </div>
+          
         </div>
       </div>
     </footer>
@@ -77,6 +92,7 @@ function FooterCol({ title, children }: { title: string; children: React.ReactNo
     </div>
   );
 }
+
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <Link href={href} className="text-sm text-paper/70 transition-colors hover:text-paper">
